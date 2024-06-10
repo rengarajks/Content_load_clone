@@ -5,6 +5,8 @@ export const CURRENT_CP = 'CURRENT_CP';
 export const NEXT_MCQ = 'NEXT_MCQ';
 export const MAX_LIMIT = 'MAX_LIMIT';
 export const CURRENT_CP_TEST = 'CURRENT_CP_TEST';
+export const MCQ_CHOICES = 'MCQ_CHOICES';
+export const CODE_EDITOR_VISIBLE = 'CODE_EDITOR_VISIBLE'
 
 export const setCurrentTask = ( task ) => ({
     type : CURRENT_TASK,
@@ -32,6 +34,15 @@ export const setCurrentCPTest = (cpTest) => ({
 
 export const nextMcq = () => ({
     type : NEXT_MCQ
+});
+
+export const setMcqChoices = (choices) => ({
+    type : MCQ_CHOICES,
+    payload : choices
+});
+
+export const setCodeEditorVisible = () => ({
+    type : CODE_EDITOR_VISIBLE
 })
 
 

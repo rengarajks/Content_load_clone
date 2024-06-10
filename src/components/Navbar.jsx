@@ -10,7 +10,7 @@ import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
 
 function Navbar() {
   return (
-    <div className='flex justify-between bg-[#F0F8FF] border-b-2 p-2 text-white shadow-xl border-2 border-slate-500/10 backdrop-blur-sm bg-slate-600/20'>
+    <div className='flex justify-between  bg-[#F0F8FF] border-b-2 p-2 text-white shadow-xl border-2 border-slate-500/10 backdrop-blur-sm bg-slate-600/20'>
         <div className='flex'><div><img className='w-[100px]'  src={logo}/></div><div className='font-bold ml-10 '>{data.courseName}</div></div>
 
 {/* Icons */}

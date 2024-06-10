@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector , useDispatch } from 'react-redux';
 import { maxLimit, setCurrentCPTest, setCurrentCpIndex } from '../redux/actions';
+import Typer from '../utils/Typer';
 
 const CurrentCp = ( { cpData } ) => {
     const { currentCpTest, currentMcq  } = useSelector(state => state);
@@ -16,11 +17,15 @@ const CurrentCp = ( { cpData } ) => {
         return (
             <div className='my-4'>
                 {contentListData.slice(0, currentMcq + 1).map((item, index) => (
-                    <p
-                        key={index}
-                        dangerouslySetInnerHTML={{ __html: item.value }}
-                        className={`${item.type === "SUB-TOPIC" && 'bg-purple-500 text-white font-bold p-2'}`}
-                    ></p>
+                    // <p
+                    //     key={index}
+                    //     dangerouslySetInnerHTML={{ __html: item.value }}
+                    //     className={`${item.type === "SUB-TOPIC" && 'bg-purple-500 text-white font-bold p-2'}`}
+                    // ></p>
+                    <div className={`${item.type === "SUB-TOPIC" && 'bg-purple-500 text-white font-bold p-2'}`}>
+                        <Typer sentence={item.value} />
+                    </div>
+                    
                 ))}
             </div>
         );
@@ -42,7 +47,7 @@ const CurrentCp = ( { cpData } ) => {
                     <div className='my-4'>
                         
                         <p className='bg-purple-600 text-white'>{testData['tf']}</p>
-                        <div className='flex flex-row items-center gap-4'>
+                        {/* <div className='flex flex-row items-center gap-4'>
                             <div className='flex flex-row'>
                                 <input type="radio" name={testData['tf']} value={true} />
                                 <label htmlFor={testData['tf']}>True</label>
@@ -51,7 +56,7 @@ const CurrentCp = ( { cpData } ) => {
                                 <input type="radio" id={testData['tf']} name={testData['tf']} value={false} />
                                 <label htmlFor={testData['tf']}>False</label>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 );
             case "fb-list":
@@ -91,9 +96,9 @@ const CurrentCp = ( { cpData } ) => {
                         <div className='w-full bg-black text-white p-4'>
                              <pre>{testData.output}</pre>
                         </div>
-                        <div className="flex flex-row my-2">
+                        {/* <div className="flex flex-row my-2">
                             Find the bug line : <input type="number" className='bg-transparent border-b-2 border-black outline-none' />
-                        </div>
+                        </div> */}
                     </div>
                 );
             default:

@@ -1,13 +1,23 @@
-import { CURRENT_CP, CURRENT_CP_TEST, CURRENT_INFO, CURRENT_TASK , CURRENT_TOPIC , NEXT_MCQ  } from "./actions";
+import { CURRENT_CP, 
+        CURRENT_CP_TEST, 
+        CURRENT_INFO, 
+        CURRENT_TASK , 
+        CURRENT_TOPIC , 
+        NEXT_MCQ  ,
+        MCQ_CHOICES,
+        CODE_EDITOR_VISIBLE
+    } from "./actions";
 
 const initialState = {
     currentTask : "Task-01",
     currentTopic : 1, 
     currentCp : 0 , 
-    currentCpTest : 'tf-list',
+    currentCpTest : 'content-list',
     currentInfo : 1 ,
-    currentMcq : 0,
-    isMcq : false
+    currentMcq : 1,
+    isMcq : true,
+    mcqChoices : null,
+    isEditorVisible : false
 }
 
 export const reducers = (state = initialState , action) => {
@@ -62,6 +72,16 @@ export const reducers = (state = initialState , action) => {
                     currentCpTest : action.payload,
                     currentMcq : 0
                 }
+        case MCQ_CHOICES:
+            return{
+                ...state,
+                mcqChoices : action.payload
+            }
+        case CODE_EDITOR_VISIBLE:
+            return{
+                ...state ,
+                isEditorVisible : !state.isEditorVisible
+            }
         default:
             return state
     }

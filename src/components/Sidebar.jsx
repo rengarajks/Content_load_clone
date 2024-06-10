@@ -8,7 +8,7 @@ function Sidebar() {
     const dispatch = useDispatch()
     const currentTask = useSelector(state => state.currentTask);
   return (
-    <div className='w-fulll  border-r-2 h-full text-white shadow-xl border-2 border-slate-500/10 backdrop-blur-sm bg-slate-600/20 mx-2 rounded-md'>
+    <div className='  border-r-2 h-full text-white shadow-xl border-2 border-slate-500/10 backdrop-blur-sm bg-slate-600/20 m-2 rounded-md'>
 
 {Object.entries(data).map(([key,value ], index) => {
             if(key.startsWith('Task')){

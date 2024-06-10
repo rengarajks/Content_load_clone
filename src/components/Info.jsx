@@ -19,10 +19,10 @@ const Info = ({topic}) => {
 
   return (
     <>
-        <div className="flex-row flex w-full justify-between">
+        {/* <div className="flex-row flex w-full justify-between">
             <p className='font-bold font-bold bg-gradient-to-r from-red-600 to-purple-500 inline-block text-transparent bg-clip-text'>{topic.topic}</p>
             <p className='font-bold bg-gradient-to-r from-red-600 to-purple-500 inline-block text-transparent bg-clip-text'>Info -{currentInfo}</p>
-        </div>
+        </div> */}
         
         {/* {renderInfo()} */}
         {Object.entries(topic).map(([key,value],index) => {
